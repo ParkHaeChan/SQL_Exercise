@@ -1,0 +1,12 @@
+--https://programmers.co.kr/learn/courses/30/lessons/59410
+--검색 CASE문 방식
+SELECT ANIMAL_TYPE,
+CASE
+WHEN NAME IS NULL THEN 'No name'
+ELSE NAME
+END as NAME,
+SEX_UPON_INTAKE FROM ANIMAL_INS
+--COALESCE 함수 방식 : NAME이 NULL 아닌 경우 NAME 출력, NULL인 경우 다음 인수('No name') 출력
+SELECT ANIMAL_TYPE,
+COALESCE (NAME, 'No name'),
+SEX_UPON_INTAKE FROM ANIMAL_INS
